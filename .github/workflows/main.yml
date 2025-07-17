@@ -102,7 +102,7 @@ jobs:
         vinca --multiple --platform win-64
     - name: Generate azure pipelines for win-64
       run: |
-        vinca-gha --platform win-64 --trigger-branch buildbranch_win -d ./recipes
+        vinca-gha --platform win-64 --trigger-branch buildbranch_win --batch_size 30 -d ./recipes
     - name: Commit files for win-64
       run: |
         if [[ -f "win.yml" ]]; then
